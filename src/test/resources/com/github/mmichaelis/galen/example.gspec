@@ -1,0 +1,31 @@
+# This line a comment
+# However next line is not a comment
+# Main page: https://2017.cssconf.eu
+
+@set
+    speakers 14
+
+@objects
+    top_bar            css   .top-bar
+    main               css   .sticky-footer-container__content
+    banner             css   header
+        image          css   .visuals__canvas
+        banner_title   css   .tc.mt3.mb2
+    speakers_section   css   main
+        heading        css   section.pb0
+        content        css   section.section--block-list
+            box-*      css   .col-xs-12
+
+@groups
+    content   banner, speakers_section
+
+= Main section =
+
+    @on *
+        global:
+            count any speakers_section.content.box-* is ${speakers}
+
+        top_bar:
+            inside screen 0px top
+            width ~ 95 % of viewport/width
+            # on top all
