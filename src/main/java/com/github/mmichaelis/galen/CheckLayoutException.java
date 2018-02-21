@@ -1,6 +1,9 @@
 package com.github.mmichaelis.galen;
 
-public class CheckLayoutException extends RuntimeException {
+@SuppressWarnings({"unused", "WeakerAccess"})
+public class CheckLayoutException extends GalenExtensionException {
+    private static final long serialVersionUID = 3082184860732869799L;
+
     public CheckLayoutException() {
         super();
     }
